@@ -1,48 +1,65 @@
 import React from "react";
-import dropdown from "../icons/dropdown.svg";
 import iphonlogo from "../icons/iphonlogo.png";
-import arrowright from '../icons/arrowright.svg'
-import iphonefourteen from '../icons/iphonfourteen.png'
+import iphonefourteen from "../icons/iphonfourteen.png";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <div className="flex">
-      {/* Sidebar started */}
-
-      <div className="flex flex-col flex-nowwrap  w-[250px] font-semibold h-auto pt-[60px] ml-[100px] items-start ">
-        <button className="flex flex-nowrap">
-          Mens Fashions
-          <img src={dropdown} className="pl-[60px] " />
-        </button>
-        <button className="flex flex-nowrap">
-          Womens Fashions
-          <img src={dropdown} className="pl-[35px]" />
-        </button>
-        <button>Electronics</button>
-        <button>Home and LifeCycle</button>
-        <button>Medicine</button>
-        <button>Sports and Outdoor</button>
-        <button>Baby's and Toys</button>
-        <button>Groceries and Pets</button>
-        <button>Health and Beauty</button>
-      </div>
-      {/* Side Bar Images */}
-      <div className="bg-black text-white w-[550px]">
-        <div className="inline-flex items-center pl-4 pt-12 text-[15px]">
-        <img src={iphonlogo} />
-        <span>Iphone 14 Series</span>
+    <div>
+      {/* sidebar started */}
+      {/* side bar main div*/}
+      <div className="grid grid-cols-1 md:grid md:grid-cols-2 lg:grid-cols-5">
+        {/* side bar contents */}
+        <div className="grid grid-cols-2 gap-3 pt-5 text-[20px] font-semibold underline justify-start
+        md:grid md:grid-cols-1 md:no-underline lg:gap-2 lg:grid lg:grid-cols-1 text-start lg:text-[15px]
+        ">
+          <button>
+            Mens Fashions <i className="fa-solid fa-sm fa-chevron-right " />
+          </button>
+          <button>
+            Mens Fashions <i className="fa-solid fa-sm fa-chevron-right " />
+          </button>
+          <button>Electronics</button>
+          <button>Home and LifeCycle</button>
+          <button>Medicine</button>
+          <button>Sports and Outdoor</button>
+          <button>Baby and Toys</button>
+          <button>Groceries and Pets</button>
+          <button>Health and Beauty</button>
         </div>
-        <div className="w-[250px] pl-[50px] text-3xl">
-        <h1 className="text-white ">Up to 10% off Voucher</h1>
-         </div>
+        {/* side bar contents ended */}
+        {/* side image */}
+        <div className="pt-[20px] md:grid md:grid-cols-1  lg:grid-cols-2 lg:col-span-4 lg:w-[100%]   ">
+          {/* image conents */}
+          <div className="bg-black text-white ">
+            <div className="pl-[130px] h-[120px] pt-3 flex flex-row">
+              <img src={iphonlogo} />
+              <h1 className="pt-[40px] pl-[20px] text-[20px]">
+                {" "}
+                Iphone 14 series
+              </h1>
+            </div>
+            <h1 className="pl-[140px] pt-14 text-3xl pb-8 ">
+              Up to 10% off Voucher
+            </h1>
+            <Link to={'/cart'}>
+            <button className="pl-[140px] underline font-bold text-2xl pb-6">
+              Shop Now <i className="fa-solid fa-arrow-right pl-[10px]"></i>
+            </button>
+            
+            </Link>
 
-      <button className="text-white pl-[50px] pt-[20px] underline flex">Shop Now <img src={arrowright} className="pl-[5px]"/></button>
+          </div>
+          {/* image conents ended */}
+          {/* image */}
+          <div className="md:grid md:grid-cols-1 ">
+            <img src={iphonefourteen} className="w-[100%] lg:col-span-3 lg:h-[360px]"  />
+          </div>
+          {/* image ended */}
+        </div>
+        {/* side image ended */}
       </div>
-      <div className="flex flex-row">
-        <img src={iphonefourteen}/>
-      </div>
-      {/* sidebar images ended */}
-      {/* Sidebar Div Ended */}
+      {/* side bar main div */}
     </div>
   );
 };
